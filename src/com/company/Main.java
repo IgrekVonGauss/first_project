@@ -18,6 +18,19 @@ public class Main {
         case "front3":
           System.out.println(Warmup1.front3(tokens[1]));
           break;
+        case "array123":
+          System.out.println(tokens[1]);
+          String[] items = tokens[1].replaceAll("\\[", "").replaceAll("\\]", "").replaceAll("\\s", "").split("\\.");
+          int[] results = new int[items.length];
+          for (int i = 0; i < items.length; i++) {
+            try {
+              results[i] = Integer.parseInt(items[i]);
+            } catch (NumberFormatException nfe) {
+            };
+          }
+          Warmup2 war2 = new Warmup2();
+          System.out.println(war2.array123(results));
+          break;
         case "stringE":
           Warmup1 war = new Warmup1();
           System.out.println(war.stringE(tokens[1]));

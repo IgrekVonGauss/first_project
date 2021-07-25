@@ -393,8 +393,6 @@ front3("abc") → "abcabcabc"
     for (int i = 0; i < str.length(); i++) {
       if (str.charAt(i) == 'e') {
         count++;
-        System.out
-            .println("Length = " + str.length() + " Char: " + str.charAt(i) + " Count: " + count);
       }
     }
     return count >= 1 && count <= 3;
@@ -455,14 +453,3 @@ front3("abc") → "abcabcabc"
     return resStr;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
