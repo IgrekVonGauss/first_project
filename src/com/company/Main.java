@@ -13,7 +13,7 @@ public class Main {
       String[] tokens = userInput.split(", ");
       String command = tokens[0];
       switch (command) {
-        case "exit";
+        case "exit":
           break;
         case "front3":
           System.out.println(Warmup1.front3(tokens[1]));
