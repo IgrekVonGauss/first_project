@@ -63,7 +63,13 @@ stringBits("Hi") → "H"
 stringBits("Heeololeo") → "Hello"
  */
   public String stringBits(String str) {
-    return "hz";
+    String res = "";
+    for (int i=0; i < str.length(); i++){
+      if (i % 2 == 0) {
+        res += str.charAt(i);
+      }
+    }
+    return res;
   }
 /*
 Given a non-empty string like "Code" return a string like "CCoCodCode".

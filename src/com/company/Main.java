@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -30,6 +31,10 @@ public class Main {
           }
           Warmup2 war2 = new Warmup2();
           System.out.println(war2.array123(results));
+          break;
+        case "makePi":
+          Array1 arr = new Array1();
+          System.out.println(Arrays.toString(arr.makePi(Integer.parseInt(tokens[1]))));
           break;
         case "stringE":
           Warmup1 war = new Warmup1();
