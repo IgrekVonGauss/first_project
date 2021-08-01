@@ -90,19 +90,160 @@ reverse3([5, 11, 9]) → [9, 11, 5]
 reverse3([7, 0, 0]) → [0, 0, 7]
  */
   public int[] reverse3(int[] nums) {
+    int[] res = new int[3];
+    for (int i = 0; i < nums.length; i++) {
+      res[i] = nums[nums.length - 1 - i];
+    }
+    return res;
+  }
+/*
+Given an array of ints length 3, figure out which is larger, the first or last element in the array, and set all the other elements to be that value. Return the changed array.
 
+maxEnd3([1, 2, 3]) → [3, 3, 3]
+maxEnd3([11, 5, 9]) → [11, 11, 11]
+maxEnd3([2, 11, 3]) → [3, 3, 3]
+ */
+  public int[] maxEnd3(int[] nums) {
+    int[] res = new int[nums.length];
+    int largerNum = Math.max(nums[0], nums[nums.length - 1]);
+    for (int i=0; i<nums.length; i++){
+      res[i] = largerNum;
+    }
+    return res;
+  }
+/*
+Given an array of ints, return the sum of the first 2 elements in the array.
+If the array length is less than 2, just sum up the elements that exist, returning 0 if the array is length 0.
+
+sum2([1, 2, 3]) → 3
+sum2([1, 1]) → 2
+sum2([1, 1, 1, 1]) → 2
+ */
+  public int sum2(int[] nums) {
+    if (nums.length == 0) {
+      return 0;
+    }
+    if (nums.length == 1){
+      return nums[0];
+    }
+    else {
+      return nums[0] + nums[1];
+    }
+  }
+/*
+Given 2 int arrays, a and b, each length 3, return a new array length 2 containing their middle elements.
+
+middleWay([1, 2, 3], [4, 5, 6]) → [2, 5]
+middleWay([7, 7, 7], [3, 8, 0]) → [7, 8]
+middleWay([5, 2, 9], [1, 4, 5]) → [2, 4]
+ */
+  public int[] middleWay(int[] a, int[] b) {
+    int[] res = new int[2];
+    res[0] = a[1];
+    res[1] = b[1];
+    return res;
+  }
+/*
+Given an array of ints, return a new array length 2 containing the first and last elements from the original array. The original array will be length 1 or more.
+
+makeEnds([1, 2, 3]) → [1, 3]
+makeEnds([1, 2, 3, 4]) → [1, 4]
+makeEnds([7, 4, 6, 2]) → [7, 2]
+ */
+  public int[] makeEnds(int[] nums) {
+    int[] res = new int[2];
+    res[0] = nums[0];
+    res[1] = nums[nums.length-1];
+    return res;
+  }
+/*
+Given an int array length 2, return true if it contains a 2 or a 3.
+
+has23([2, 5]) → true
+has23([4, 3]) → true
+has23([4, 5]) → false
+ */
+  public boolean has23(int[] nums) {
+    return (nums[0] > 1 && nums[0] < 4) && (nums[1] > 1 && nums[1] < 4);
+  }
+/*
+Given an int array length 2, return true if it does not contain a 2 or 3.
+
+no23([4, 5]) → true
+no23([4, 2]) → false
+no23([3, 5]) → false
+ */
+  public boolean no23(int[] nums) {
+    return (nums[0] > 3 || nums[0] < 2) && (nums[1] > 3 || nums[1] < 2);
+  }
+/*
+Given an int array, return a new array with double the length where its last element is the same as the original array, and all the other elements are 0.
+The original array will be length 1 or more. Note: by default, a new int array contains all 0's.
+
+makeLast([4, 5, 6]) → [0, 0, 0, 0, 0, 6]
+makeLast([1, 2]) → [0, 0, 0, 2]
+makeLast([3]) → [0, 3]
+ */
+  public int[] makeLast(int[] nums) {
+    int[] res = new int[nums.length*2];
+    res[res.length-1] = nums[nums.length-1];
+    return res;
+  }
+/*
+Given an int array, return true if the array contains 2 twice, or 3 twice. The array will be length 0, 1, or 2.
+
+double23([2, 2]) → true
+double23([3, 3]) → true
+double23([2, 3]) → false
+ */
+  public boolean double23(int[] nums) {
+    return nums.length >= 2 && (nums[0] == nums[1] && (nums[0] == 2 || nums[0] == 3));
+  }
+/*
+Given an int array length 3, if there is a 2 in the array immediately followed by a 3, set the 3 element to 0. Return the changed array.
+
+fix23([1, 2, 3]) → [1, 2, 0]
+fix23([2, 3, 5]) → [2, 0, 5]
+fix23([1, 2, 1]) → [1, 2, 1]
+ */
+  public int[] fix23(int[] nums) {
+    if (nums[0] == 2 && nums[1] == 3) {
+      nums[1] = 0;
+      return nums;
+    }
+    if (nums[1] == 2 && nums[2] == 3) {
+      nums[2] = 0;
+      return nums;
+    }
+    else
+      return nums;
+  }
+/*
+Start with 2 int arrays, a and b, of any length. Return how many of the arrays have 1 as their first element.
+
+start1([1, 2, 3], [1, 3]) → 2
+start1([7, 2, 3], [1]) → 1
+start1([1, 2], []) → 1
+ */
+  public int start1(int[] a, int[] b) {
+    if (a[0] == 1 && b[0]==1){
+      return 2;
+    }
+    if (a[0] == 1 ^ b[0]==1){
+      return 1;
+    }
+    else
+      return 0;
   }
 
 
 
 
-
-
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
